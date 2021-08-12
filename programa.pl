@@ -10,9 +10,10 @@ casaApropiada(ravenclaw,[inteligencia,responsabilidad]).
 
 % Punto 1
 
-permiteEntrar(_,gryffindor).
-permiteEntrar(_,hufflepuff).
-permiteEntrar(_,ravenclaw).
+permiteEntrar(Nombre,Casa):-
+    mago(Nombre,_,_,_),
+    casa(Casa),
+    Casa \= slytherin.
 permiteEntrar(Nombre,slytherin):-
     not(sangreImpura(Nombre)).
 
